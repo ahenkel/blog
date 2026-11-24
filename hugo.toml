@@ -1,0 +1,61 @@
+# TODO: replace YOUR-GITHUB-USERNAME, the site name and the author details below.
+# On GitHub Pages the build overrides baseURL with the real Pages URL.
+baseURL = "https://YOUR-GITHUB-USERNAME.github.io/"
+locale = "en-US"
+title = "My Dev Blog"
+theme = "hugo-blog-awesome"
+
+enableRobotsTXT = true
+enableEmoji = true
+
+[markup]
+  [markup.highlight]
+    # The theme ships its own CSS for Hugo's highlighter. Fenced ```al blocks are highlighted as Business Central AL.
+    noClasses = false
+  [markup.tableOfContents]
+    startLevel = 2
+    endLevel = 4
+    ordered = false
+
+[params]
+  sitename = "My Dev Blog"
+  description = "Notes on Microsoft Dynamics 365 Business Central, AL and C#."
+  defaultColor = "auto"       # dark, light or auto (follows the visitor's OS setting)
+  mainSections = ["posts"]
+  toc = true                  # table of contents on posts; override per post with `toc: false`
+  tocOpen = false
+  goToTop = true
+  dateFormat = "2 Jan 2006"
+  rssFeedDescription = "summary"   # summary or full
+
+  [params.author]
+    name = "Your Name"
+    intro = "Hi, I'm Your Name"
+    description = "Business Central and C# developer. I write about AL, .NET and the things I learn along the way."
+    avatar = "avatar.jpg"     # optional: put a square image at assets/avatar.jpg
+
+  [[params.socialIcons]]
+    name = "github"
+    url = "https://github.com/YOUR-GITHUB-USERNAME"
+
+  [[params.socialIcons]]
+    name = "rss"
+    url = "/index.xml"
+
+[[menu.main]]
+  pageRef = "/"
+  name = "Home"
+  url = "/"
+  weight = 10
+
+[[menu.main]]
+  pageRef = "posts"
+  name = "Posts"
+  url = "/posts/"
+  weight = 20
+
+[[menu.main]]
+  pageRef = "about"
+  name = "About"
+  url = "/about/"
+  weight = 30

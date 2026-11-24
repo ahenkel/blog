@@ -1,0 +1,11 @@
+# Keep LF line endings so files behave the same on Windows and inside the Linux dev container
+* text=auto eol=lf
+
+*.png  binary
+*.jpg  binary
+*.jpeg binary
+*.gif  binary
+*.webp binary
+*.ico  binary
+*.woff binary
+*.woff2 binary

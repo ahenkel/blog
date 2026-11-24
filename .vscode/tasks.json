@@ -1,0 +1,41 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Hugo: serve (with drafts)",
+      "type": "shell",
+      // --poll: file change events from a Windows drive don't always reach the container
+      "command": "hugo server --bind 0.0.0.0 --buildDrafts --buildFuture --navigateToChanged --poll 700ms",
+      "isBackground": true,
+      "problemMatcher": {
+        "owner": "hugo",
+        "pattern": { "regexp": "^ERROR (.*)$", "message": 1 },
+        "background": {
+          "activelyMatching": true,
+          "beginsPattern": "^Start building sites",
+          "endsPattern": "^Web Server is available"
+        }
+      },
+      "group": { "kind": "build", "isDefault": true }
+    },
+    {
+      "label": "Hugo: new post",
+      "type": "shell",
+      "command": "hugo new content posts/${input:slug}.md",
+      "problemMatcher": []
+    },
+    {
+      "label": "Hugo: production build",
+      "type": "shell",
+      "command": "hugo --gc --minify",
+      "problemMatcher": []
+    }
+  ],
+  "inputs": [
+    {
+      "id": "slug",
+      "type": "promptString",
+      "description": "Post file name (lowercase-with-dashes, no .md)"
+    }
+  ]
+}

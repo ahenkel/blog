@@ -1,0 +1,32 @@
+{
+  "name": "Hugo blog",
+  // Ubuntu base image + Dart Sass (see Dockerfile)
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  "features": {
+    // Keep this version in sync with HUGO_VERSION in .github/workflows/hugo.yml
+    "ghcr.io/devcontainers/features/hugo:1": {
+      "version": "0.170.1",
+      "extended": true
+    }
+  },
+  "forwardPorts": [1313],
+  "portsAttributes": {
+    "1313": {
+      "label": "Hugo server",
+      "onAutoForward": "openBrowser"
+    }
+  },
+  // The repo lives on a Windows drive, so mark it safe for git and fetch the theme submodule
+  "postCreateCommand": "git config --global --add safe.directory ${containerWorkspaceFolder} && git submodule update --init --recursive",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "tamasfe.even-better-toml",
+        "DavidAnson.vscode-markdownlint",
+        "streetsidesoftware.code-spell-checker"
+      ]
+    }
+  }
+}
