@@ -1,8 +1,7 @@
-# TODO: replace YOUR-GITHUB-USERNAME, the site name and the author details below.
-# On GitHub Pages the build overrides baseURL with the real Pages URL.
-baseURL = "https://YOUR-GITHUB-USERNAME.github.io/"
+# Project site at https://ahenkel.github.io/blog/ (the deploy workflow passes the same URL from GitHub Pages)
+baseURL = "https://ahenkel.github.io/blog/"
 locale = "en-US"
-title = "My Dev Blog"
+title = "Alexander Henkel"
 theme = "hugo-blog-awesome"
 
 enableRobotsTXT = true
@@ -18,7 +17,7 @@ enableEmoji = true
     ordered = false
 
 [params]
-  sitename = "My Dev Blog"
+  sitename = "Alexander Henkel"
   description = "Notes on Microsoft Dynamics 365 Business Central, AL and C#."
   defaultColor = "auto"       # dark, light or auto (follows the visitor's OS setting)
   mainSections = ["posts"]
@@ -29,18 +28,19 @@ enableEmoji = true
   rssFeedDescription = "summary"   # summary or full
 
   [params.author]
-    name = "Your Name"
-    intro = "Hi, I'm Your Name"
+    name = "Alexander Henkel"
+    intro = "Hi, I'm Alexander"
     description = "Business Central and C# developer. I write about AL, .NET and the things I learn along the way."
     avatar = "avatar.jpg"     # optional: put a square image at assets/avatar.jpg
 
+  # The theme uses these URLs as-is, so they must be absolute (the site lives under /blog/)
   [[params.socialIcons]]
     name = "github"
-    url = "https://github.com/YOUR-GITHUB-USERNAME"
+    url = "https://github.com/ahenkel"
 
   [[params.socialIcons]]
     name = "rss"
-    url = "/index.xml"
+    url = "https://ahenkel.github.io/blog/index.xml"
 
 [[menu.main]]
   pageRef = "/"
